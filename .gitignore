@@ -2,3 +2,6 @@
 __pycache__/
 protect-diagnostic-*/
 certs/
+.secrets/
+.env
+data/

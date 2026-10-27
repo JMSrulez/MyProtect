@@ -1,0 +1,24 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "myprotect-url",
+      "description": "MyProtect HTTPS MCP URL, including /mcp"
+    },
+    {
+      "type": "promptString",
+      "id": "myprotect-token",
+      "description": "MyProtect Bearer token (not the Protect API key)",
+      "password": true
+    }
+  ],
+  "servers": {
+    "myprotect": {
+      "type": "http",
+      "url": "${input:myprotect-url}",
+      "headers": {
+        "Authorization": "Bearer ${input:myprotect-token}"
+      }
+    }
+  }
+}

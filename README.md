@@ -1,4 +1,19 @@
-# Diagnostic local UniFi Protect 7.3.70
+# MyProtect : MCP local UniFi Protect
+
+Serveur MCP en lecture seule pour Hermes, heberge sur Ubuntu avec Docker :
+inventaire des cameras, metadonnees NVR, captures temporaires et collecte des
+nouveaux evenements. API officielle Protect uniquement, validee sur 7.3.70.
+
+**Installation de la V1 : [guide Ubuntu / Docker / Hermes](docs/DEPLOYMENT.md).**
+HTTPS obligatoire, jeton Bearer distinct de la cle Protect et stockage borne.
+Pas de logs systeme, d'export video historique, de SSH ou d'outil d'ecriture.
+
+Les outils sont `list_cameras`, `get_nvr_status`, `get_collector_status`,
+`search_events`, `get_snapshot` et `read_snapshot`. La collecte alimente un
+historique local partiel ; elle ne recupere pas l'historique anterieur du NVR.
+Le serveur exige Python 3.11+ ; l'image Docker utilise Python 3.13.
+
+## Diagnostics prealables
 
 Ces scripts sont destines au serveur Ubuntu qui hebergera le MCP. Ils ne
 constituent pas encore un serveur MCP et ne changent aucun parametre du NVR.
